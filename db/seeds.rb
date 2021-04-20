@@ -15,9 +15,9 @@ ray = User.create!(first_name: "Raynaldo", last_name: "Sutisna", username: "Rayn
 mauro = User.create!(first_name: "Mauro", last_name: "Dorigo", username: "MauroDorigo", photo: "https://ca.slack-edge.com/T01LDUYQA4S-U01U65LQVJN-3e9932e12acc-512")
 puts "User Prompt Done!"
 
-q1 = QuestionPrompt.create!(question: "How are you?", topic: 1)
-q2 = QuestionPrompt.create!(question: "What's your name?", topic: 2)
-q3 = QuestionPrompt.create!(question: "1 + 2 = ?", topic: 3)
+q1 = QuestionPrompt.create!(question: "How are you?", topic: QuestionPrompt.topics[:understanding])
+q2 = QuestionPrompt.create!(question: "What's your name?", topic: QuestionPrompt.topics[:responsibility])
+q3 = QuestionPrompt.create!(question: "1 + 2 = ?", topic: QuestionPrompt.topics[:space_to_grow])
 puts "Question Prompt Done!"
 
 puts q1.id
