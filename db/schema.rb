@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_202726) do
   enable_extension "plpgsql"
 
   create_table "answer_prompts", force: :cascade do |t|
-    t.integer "question_id"
+    t.integer "question_prompt_id"
     t.integer "user_id"
     t.text "answer"
     t.datetime "created_at", precision: 6, null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_202726) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "full_name"
+    t.string "first_name"
     t.string "last_name"
     t.string "username"
     t.string "photo"
