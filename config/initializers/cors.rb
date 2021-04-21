@@ -9,7 +9,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     # origins 'example.com'
     # https://the-nurturing-garden.vercel.app/
-    origins "the-nurturing-garden.vercel.app"
+    origins Rails.application.config.allowed_cors_origins
 
     resource "*",
       headers: :any,
