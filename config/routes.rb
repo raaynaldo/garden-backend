@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "/goals", to: "goals#index"
+      post "/users", to: "users#create"
     end
   end
 end
