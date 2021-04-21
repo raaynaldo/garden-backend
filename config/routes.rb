@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/goals", to: "goals#index"
       post "/users", to: "users#create"
+      get "/users", to: "users#index"
     end
   end
 end

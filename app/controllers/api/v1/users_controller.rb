@@ -1,4 +1,9 @@
 class Api::V1::UsersController < ApplicationController
+  def index
+    users = User.all
+    render json: users, root: "users", adapter: :json, each_serializer: UserSerializer, status: :ok
+  end
+
   def create
     puts user_params
     user = User.find_by(uid: user_params[:uid])
