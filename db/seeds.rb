@@ -11,8 +11,8 @@ Goal.destroy_all
 QuestionPrompt.destroy_all
 User.destroy_all
 
-ray = User.create!(name: "Raynaldo Sustina", uid: "123", photo_url: "https://ca.slack-edge.com/T01LDUYQA4S-U01L764HZ4N-a689fcca7784-512")
-ray = User.create!(name: "Mauro Dorigo", uid: "1234", photo_url: "https://ca.slack-edge.com/T01LDUYQA4S-U01L764HZ4N-a689fcca7784-512")
+ray = User.create!(name: "Raynaldo Sustina", uid: "123", email: "raaynaldo@gmail.com", photo_url: "https://ca.slack-edge.com/T01LDUYQA4S-U01L764HZ4N-a689fcca7784-512")
+mauro = User.create!(name: "Mauro Dorigo", uid: "1234", email: "mauro.dorigo@gmail.com", photo_url: "https://ca.slack-edge.com/T01LDUYQA4S-U01L764HZ4N-a689fcca7784-512")
 puts "User Prompt Done!"
 
 q1 = QuestionPrompt.create!(question: "How are you?", topic: QuestionPrompt.topics[:understanding])
