@@ -22,7 +22,7 @@ class Api::V1::UsersController < ApplicationController
     render json: { user: UserSerializer.new(user), token: token }, status: :created
   end
 
-  private
+private
 
   def user_params
     params.require(:user).permit(:uid, :name, :photo_url, :email)

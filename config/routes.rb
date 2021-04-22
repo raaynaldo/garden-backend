@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get "/users", to: "users#index"
       get "/question/:id", to: "question_prompts#show"
       get "/questions", to: "question_prompts#index"
+      get "/questions_prompt/:topic", to: "question_prompts#find_topic"
     end
   end
 end
