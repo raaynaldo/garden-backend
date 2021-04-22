@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "/goals", to: "goals#index"
+      get "/goals_by_user", to: "goals#index_by_user"
+      post "/goals", to: "goals#create"
+
       post "/users", to: "users#create"
       get "/users", to: "users#index"
     end
