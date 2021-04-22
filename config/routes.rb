@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       get "/goals", to: "goals#index"
       post "/users", to: "users#create"
       get "/users", to: "users#index"
+      get "/question/:id", to: "question_prompts#show"
+      get "/questions", to: "question_prompts#index"
     end
   end
 end
