@@ -1,7 +1,5 @@
 class Api::V1::QuestionPromptsController < ApplicationController
 
-    
-    
     def index
         questions = QuestionPrompt.all
         render json: questions
@@ -16,5 +14,7 @@ class Api::V1::QuestionPromptsController < ApplicationController
         topic = QuestionPrompt.where(topic: params[:topic])
         render json: topic.sample
     end
+
+    
 
 end
