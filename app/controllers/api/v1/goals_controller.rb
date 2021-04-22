@@ -4,7 +4,7 @@ class Api::V1::GoalsController < ApplicationController
   end
 
   def index_by_user
-    render json: Goal.by_user_uid(current_user.id), root: "goals", adapter: :json, each_serializer: GoalSerializer, statu: :ok
+    render json: Goal.by_user_uid(current_user.id), root: "goals", adapter: :json, each_serializer: GoalSerializer, status: :ok
   end
 
   def create
