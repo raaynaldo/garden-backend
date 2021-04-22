@@ -1,4 +1,6 @@
 class Api::V1::UsersController < ApplicationController
+  skip_before_action :authorized, only: [:create]
+
   def index
     users = User.all
     render json: users, root: "users", adapter: :json, each_serializer: UserSerializer, status: :ok
@@ -15,7 +17,9 @@ class Api::V1::UsersController < ApplicationController
       user.save
       #   render json: { user: UserSerializer.new(user) }, status: :created
     end
-    render json: { user: UserSerializer.new(user) }, status: :created
+    token = encode_token(user_id: user.id)
+    puts "hello " + token
+    render json: { user: UserSerializer.new(user), token: token }, status: :created
   end
 
   private
