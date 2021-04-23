@@ -4,11 +4,11 @@ class Api::V1::AnswerPromptController < ApplicationController
     end
 
     def index_by_user
-      render json: AnswerPrompt.by_user_uid(current_user.id), root: "answer_prompt", adapter: :json, each_serializer: AnswerSerializer, status: :ok
+      render json: AnswerPrompt.by_user_uid(current_user.id), root: "answer_prompt", adapter: :json, each_serializer: AnswerPromptSerializer, status: :ok
     end
   
-    def create
-      answer_prompt = AnswerPrompt.new(task: params[:task], user_id: current_user.id)
+    def create      
+      answer_prompt = AnswerPrompt.new(answer: params[:answer], user_id: current_user.id, question_prompt_id: params[:question_prompt_id])
   
       if answer_prompt.save!
         render json: { answer_prompt: { id: answer_prompt.id } }, status: :ok
