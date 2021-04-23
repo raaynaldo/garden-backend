@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       get "/question/:id", to: "question_prompts#show"
       get "/questions", to: "question_prompts#index"
       get "/questions_prompt/:topic", to: "question_prompts#find_topic"
+
+      get "/answers", to: "answer_prompt#index"
+      get "/answers_by_user", to: "answer_prompt#index_by_user"
+      post "/answers", to: "answer_prompt#create"
     end
   end
 end
