@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/goals", to: "goals#index"
       get "/goals_by_user", to: "goals#index_by_user"
-      post "/goals", to: "goals#create"
+      patch "/goals/:id", to: "goals#update"
+      post "/goals", to: "goals#create" 
+      delete '/goals/:id', to: "goals#destroy"
 
       post "/users", to: "users#create"
       get "/users", to: "users#index"
