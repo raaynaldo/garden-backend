@@ -1,4 +1,5 @@
 class Api::V1::QuestionPromptsController < ApplicationController
+    # skip_before_action :authorized, only: [:index, :show, :create]
 
     def index
         questions = QuestionPrompt.all

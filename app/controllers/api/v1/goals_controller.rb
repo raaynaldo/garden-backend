@@ -1,12 +1,12 @@
 class Api::V1::GoalsController < ApplicationController
-  skip_before_action :authorized, only: [:index, :show, :create]
+#  skip_before_action :authorized, only: [:index, :show, :create]
 
   def index
     render json: Goal.all, root: "goals", adapter: :json, each_serializer: GoalSerializer, status: :ok
   end
 
   def index_by_user
-    render json: Goal.by_user_uid(current_user.id), root: "goals", adapter: :json, each_serializer: GoalSerializer, status: :ok
+    render json: Goal.by_user_uid(current_user.id).order(created_at: :desc), root: "goals", adapter: :json, each_serializer: GoalSerializer, status: :ok
   end
 
   def create
