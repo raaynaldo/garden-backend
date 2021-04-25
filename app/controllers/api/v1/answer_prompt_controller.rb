@@ -4,7 +4,7 @@ class Api::V1::AnswerPromptController < ApplicationController
     end
 
     def index_by_user
-      render json: AnswerPrompt.by_user_uid(current_user.id), root: "answer_prompt", adapter: :json, each_serializer: AnswerPromptSerializer, status: :ok
+      render json: AnswerPrompt.by_user_uid(current_user.id).order(created_at: :desc), root: "answer_prompt", adapter: :json, each_serializer: AnswerPromptSerializer, status: :ok
     end
   
     def create      
